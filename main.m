@@ -24,15 +24,15 @@ load(config.fe);
 % Extract the fascicles
 fg = feGet(fe,'fibers acpc');
 
-if strcmp(config.remove_zero_weighted_fibers, 'before')
-        % Extract the fascicle weights from the fe structure
-        % Dependency "encode".
-        w = feGet(fe,'fiber weights');
-        
-        % Eliminate the fascicles with non-zero entries
-        % Dependency "vistasoft"
-        fg = fgExtract(fg, w > 0, 'keep');
-end
+
+% Extract the fascicle weights from the fe structure
+% Dependency "encode".
+w = feGet(fe,'fiber weights');
+
+% Eliminate the fascicles with non-zero entries
+% Dependency "vistasoft"
+fg = fgExtract(fg, w > 0, 'keep');
+
 
 fg_sub = fg;
 fg_sub.fibers = fg.fibers(1:10:end,:);
