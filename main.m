@@ -42,7 +42,16 @@ connectome.coords = fg_sub.fibers;
 connectome.color = [0.2052473684,0.2466526316,0.6930631579];
 
 mkdir('tracts')
-savejson('', connectome, fullfile('tracts', 'connectome.json'));
+savejson('', connectome, fullfile('tracts', '20.json'));
+
+test.name = 'testblank';
+test.coords = [];
+test.color = [ 1, 1, 1];
+
+for it =1:19
+    savejson('', test, fullfile('tracts', sprintf('%i,json',it)));
+end
+
 end
 
 
