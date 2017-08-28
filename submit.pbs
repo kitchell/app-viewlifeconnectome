@@ -12,7 +12,7 @@ rm -rf tracts
 export MATLABPATH=$MATLABPATH:$SERVICE_DIR
 matlab -nodisplay -nosplash -r main
 
-if [ -s tracts/connectome.json ];
+if [ -s tracts/20.json ];
 then
 	echo 0 > finished
 else
