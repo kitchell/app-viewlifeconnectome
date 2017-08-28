@@ -49,7 +49,7 @@ test.coords = [];
 test.color = [ 1, 1, 1];
 
 for it =1:19
-    savejson('', test, fullfile('tracts', sprintf('%i,json',it)));
+    savejson('', test, fullfile('tracts', sprintf('%i.json',it)));
 end
 
 end
